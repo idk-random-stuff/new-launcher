@@ -1,26 +1,59 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Celestial Network</title>
     <style>
       body {
         font-family: Arial, sans-serif;
+        background-color: #36353588;
+        margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        margin: 0;
-        background-color: #36353588;
       }
 
-      h1 {
+      #loaderContainer {
+        text-align: center;
+        display: none;
+      }
+
+      #loaderImage {
+        max-width: 200px;
+        border-radius: 20px;
         margin-bottom: 20px;
       }
 
-      p1 {
-        margin-bottom: 20px;
+      #loader {
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        width: 200px;
+        height: 20px;
+        position: relative;
+      }
+
+      #loaderFill {
+        background-color: #000;
+        width: 0%;
+        height: 100%;
+        border-radius: 8px;
+        animation: fillLoader 4s forwards;
+      }
+
+      @keyframes fillLoader {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      #buttonsContainer {
+        display: none;
       }
 
       button {
@@ -51,18 +84,33 @@
       button:hover {
         filter: brightness(0.9);
       }
+
+      #heading,
+      #discordLink {
+        display: none;
+      }
     </style>
   </head>
   <body>
-    <h1>Celestial Network</h1>
-    <p>
+    <div id="loaderContainer">
+      <img
+        id="loaderImage"
+        src="https://snsjwj.csb.app/image.png"
+        alt="Image"
+      />
+      <div id="loader">
+        <div id="loaderFill"></div>
+      </div>
+    </div>
+    <h1 id="heading">Celestial Network</h1>
+    <p id="discordLink">
       In case this site gets blocked, join the
       <a href="https://discord.com/invite/R5zcwHjDWs/" target="_blank"
         >Discord</a
       >
       for all of our links.
     </p>
-    <p>
+    <div id="buttonsContainer">
       <button
         onclick="window.location.href='https://aesthetic-fenglisu-0f4cfb.netlify.app'"
       >
@@ -78,6 +126,15 @@
       >
         Celestial Proxy
       </button>
-    </p>
+    </div>
+    <script>
+      document.getElementById("loaderContainer").style.display = "block";
+      setTimeout(function () {
+        document.getElementById("loaderContainer").style.display = "none";
+        document.getElementById("buttonsContainer").style.display = "flex";
+        document.getElementById("heading").style.display = "block";
+        document.getElementById("discordLink").style.display = "block";
+      }, 4000);
+    </script>
   </body>
 </html>
