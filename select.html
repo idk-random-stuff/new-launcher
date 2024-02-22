@@ -18,7 +18,6 @@
 
       #loaderContainer {
         text-align: center;
-        display: none;
       }
 
       #loaderImage {
@@ -28,18 +27,18 @@
       }
 
       #loader {
-        border: 2px solid #ccc;
+        background-color: #2c3e50;
         border-radius: 10px;
-        width: 200px;
-        height: 20px;
+        width: 300px;
+        height: 30px;
         position: relative;
       }
 
       #loaderFill {
-        background-color: #000;
+        background-color: #000000;
         width: 0%;
         height: 100%;
-        border-radius: 8px;
+        border-radius: 10px;
         animation: fillLoader 4s forwards;
       }
 
@@ -93,11 +92,7 @@
   </head>
   <body>
     <div id="loaderContainer">
-      <img
-        id="loaderImage"
-        src="https://snsjwj.csb.app/image.png"
-        alt="Image"
-      />
+      <img id="loaderImage" src="image.png" alt="Image" />
       <div id="loader">
         <div id="loaderFill"></div>
       </div>
